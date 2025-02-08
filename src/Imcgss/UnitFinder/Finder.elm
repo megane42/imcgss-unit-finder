@@ -1,4 +1,4 @@
-module Imcgss.UnitFinder.Finder exposing (find)
+module Imcgss.UnitFinder.Finder exposing (FoundUnit, find)
 
 import Imcgss.UnitFinder.Idol exposing (Idol)
 import Imcgss.UnitFinder.Unit exposing (Unit, all)
