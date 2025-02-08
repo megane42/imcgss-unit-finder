@@ -5,6 +5,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Imcgss.UnitFinder.Finder
+import Imcgss.UnitFinder.Live exposing (Live)
 import Imcgss.UnitFinder.Tool
 import Set
 
@@ -42,6 +43,7 @@ init =
 type Msg
     = Input String
     | Submit
+    | ChooseLive Live
 
 
 update : Msg -> Model -> Model
@@ -60,6 +62,12 @@ update msg model =
             in
             { model | foundUnits = Imcgss.UnitFinder.Finder.find performers }
 
+        ChooseLive live ->
+            { model
+                | input =
+                    String.join "\n" (Set.toList live.performers)
+            }
+
 
 
 -- VIEW
@@ -75,6 +83,10 @@ view model =
                 [ disabled (String.isEmpty (String.trim model.input)) ]
                 [ text "Submit" ]
             ]
+        , Html.div
+            []
+                (Imcgss.UnitFinder.Live.all
+                |> List.map (\live -> Html.button [onClick (ChooseLive live)] [ text live.name ]))
         , Html.ul
             []
             (model.foundUnits
