@@ -88,6 +88,11 @@ foundUnitView foundUnit =
     text
         (foundUnit.unit.name
             ++ " ("
-            ++ String.fromFloat foundUnit.coverage
+            ++ coverageView foundUnit.coverage
             ++ ")"
         )
+
+
+coverageView : Float -> String
+coverageView coverage =
+    String.fromInt (round (coverage * 100)) ++ "%"
