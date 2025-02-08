@@ -26,5 +26,15 @@ find performers =
                 , coverage = toFloat (Set.size attendee) / toFloat (Set.size currentUnit.members)
                 }
             )
-        |> List.filter
-            (\currentFoundUnit -> currentFoundUnit.coverage > 0)
+        |> List.filter (\currentFoundUnit -> currentFoundUnit.coverage > 0)
+        |> List.sortWith foundUnitComparison
+        |> List.reverse
+
+
+foundUnitComparison : FoundUnit -> FoundUnit -> Order
+foundUnitComparison foundUnit1 foundUnit2 =
+    if foundUnit1.coverage == foundUnit2.coverage then
+        compare (Set.size foundUnit1.unit.members) (Set.size foundUnit2.unit.members)
+
+    else
+        compare foundUnit1.coverage foundUnit2.coverage
