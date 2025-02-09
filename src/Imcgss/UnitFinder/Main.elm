@@ -5,7 +5,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Imcgss.UnitFinder.Finder
-import Imcgss.UnitFinder.Live exposing (Live)
+import Imcgss.UnitFinder.Preset exposing (Preset)
 import Imcgss.UnitFinder.Tool
 import Set
 
@@ -43,7 +43,7 @@ init =
 type Msg
     = Input String
     | Submit
-    | ChooseLive Live
+    | ChoosePreset Preset
 
 
 update : Msg -> Model -> Model
@@ -62,10 +62,10 @@ update msg model =
             in
             { model | foundUnits = Imcgss.UnitFinder.Finder.find performers }
 
-        ChooseLive live ->
+        ChoosePreset preset ->
             { model
                 | input =
-                    String.join "\n" (Set.toList live.performers)
+                    String.join "\n" (Set.toList preset.performers)
             }
 
 
@@ -78,9 +78,9 @@ view model =
     div []
         [ Html.h1 [ class "page-title" ] [ text "デレステ ユニット検索ツール" ]
         , Html.div
-            [ class "live-list-container" ]
-            (Imcgss.UnitFinder.Live.all
-                |> List.map (\live -> Html.button [ onClick (ChooseLive live) ] [ text live.name ])
+            [ class "preset-list-container" ]
+            (Imcgss.UnitFinder.Preset.all
+                |> List.map (\preset -> Html.button [ onClick (ChoosePreset preset) ] [ text preset.name ])
             )
         , Html.form
             [ onSubmit Submit ]

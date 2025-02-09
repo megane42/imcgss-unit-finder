@@ -1,4 +1,4 @@
-module Imcgss.UnitFinder.Live exposing (Live, all)
+module Imcgss.UnitFinder.Preset exposing (Preset, all)
 
 import Date exposing (Date)
 import Imcgss.UnitFinder.Idol exposing (Idol)
@@ -6,14 +6,14 @@ import Set exposing (Set)
 import Time exposing (Month(..))
 
 
-type alias Live =
+type alias Preset =
     { name : String
     , date : Date
     , performers : Set Idol
     }
 
 
-all : List Live
+all : List Preset
 all =
     [ { name = "Let’s AMUSEMENT!!! 大阪"
       , date = Date.fromCalendarDate 2025 Mar 8

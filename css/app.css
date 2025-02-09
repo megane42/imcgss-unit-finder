@@ -76,7 +76,7 @@ h3 {
     opacity: 0.8;
 }
 
-.live-list-container {
+.preset-list-container {
     margin: 1em;
     display: flex;
     flex-wrap: wrap;
@@ -84,7 +84,7 @@ h3 {
     justify-content: center;
 }
 
-.live-list-container button {
+.preset-list-container button {
     width: 20em;
     background-color: #fff;
     border-radius: 4px;
@@ -96,7 +96,7 @@ h3 {
     transition: .2s;
 }
 
-.live-list-container button:hover {
+.preset-list-container button:hover {
     opacity: 0.6;
 }
 
