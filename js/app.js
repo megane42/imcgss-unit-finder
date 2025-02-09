@@ -1,3 +1,4 @@
+import 'ress';
 import '../css/app.css'
 import { Elm } from '../src/Imcgss/UnitFinder/Main.elm'
 
