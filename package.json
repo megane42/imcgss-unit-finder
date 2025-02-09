@@ -1,0 +1,12 @@
+{
+  "name": "imcgss-unit-finder",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "elm-live src/Imcgss/UnitFinder/Main.elm -- --output=app.js",
+    "build": "elm make src/Imcgss/UnitFinder/Main.elm --output=app.js --optimize"
+  },
+  "devDependencies": {
+    "elm": "^0.19.1-6",
+    "elm-live": "^4.0.2"
+  }
+}
