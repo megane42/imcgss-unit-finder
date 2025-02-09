@@ -76,7 +76,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ Html.h1 [ class "page-title"] [ text "デレステ ユニット検索ツール" ]
+        [ Html.h1 [ class "page-title" ] [ text "デレステ ユニット検索ツール" ]
         , Html.div
             [ class "live-list-container" ]
             (Imcgss.UnitFinder.Live.all
@@ -88,6 +88,8 @@ view model =
                 [ textarea
                     [ onInput Input, value model.input ]
                     []
+                , p [ class "input-performers-hint" ]
+                    [ text "検索したいアイドルの名前を 1 行に 1 人ずつ入力してください。スペースは自動的に無視されるのであってもなくてもいいです。" ]
                 ]
             , div [ class "submit-performers-container" ]
                 [ button
@@ -106,8 +108,8 @@ view model =
 foundUnitView : Imcgss.UnitFinder.Finder.FoundUnit -> List (Html Msg)
 foundUnitView foundUnit =
     [ h3 [] [ text foundUnit.unit.name ]
-    , div [class "found-unit-detail-container"]
-        [ ul [class "found-unit-members-container"]
+    , div [ class "found-unit-detail-container" ]
+        [ ul [ class "found-unit-members-container" ]
             (foundUnit.unit.members
                 |> Set.toList
                 |> List.map (\member -> li [] [ text member ])
