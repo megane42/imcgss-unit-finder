@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: "Zen Kaku Gothic New", serif;
     font-weight: 300;
