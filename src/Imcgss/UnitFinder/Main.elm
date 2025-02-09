@@ -116,7 +116,13 @@ foundUnitView foundUnit =
         [ ul [ class "found-unit-members-container" ]
             (foundUnit.unit.members
                 |> Set.toList
-                |> List.map (\member -> li [] [ text member ])
+                |> List.map (\member ->
+                                 if Set.member member foundUnit.attendee  then
+                                     li [ class "attendee" ] [ text member ]
+                                 else
+                                     li [] [ text member ]
+
+                            )
             )
         , div [] [ text (coverageView foundUnit.coverage) ]
         ]

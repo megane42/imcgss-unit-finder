@@ -141,3 +141,8 @@ h3 {
 .found-unit-members-container li:last-child::after {
     content: "";
 }
+
+.attendee {
+    color: #fd99cb;
+    font-weight: 500;
+}
