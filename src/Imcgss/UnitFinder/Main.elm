@@ -76,7 +76,8 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ Html.div
+        [ Html.h1 [ class "page-title"] [ text "デレステ ユニット検索ツール" ]
+        , Html.div
             [ class "live-list-container" ]
             (Imcgss.UnitFinder.Live.all
                 |> List.map (\live -> Html.button [ onClick (ChooseLive live) ] [ text live.name ])
