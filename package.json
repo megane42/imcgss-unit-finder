@@ -1,12 +1,15 @@
 {
   "name": "imcgss-unit-finder",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "elm-live src/Imcgss/UnitFinder/Main.elm -- --output=app.js",
-    "build": "elm make src/Imcgss/UnitFinder/Main.elm --output=app.js --optimize"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
     "elm": "^0.19.1-6",
-    "elm-live": "^4.0.2"
+    "vite": "^6.1.0",
+    "vite-plugin-elm": "^3.0.1"
   }
 }
