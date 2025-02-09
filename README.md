@@ -6,16 +6,22 @@
 npm install
 ```
 
+## Dev
+
+```sh
+npm run dev
+```
+
 ## Build
 
 ```sh
 npm run build
 ```
 
-## Dev
+## Deploy
 
-```sh
-npm run dev
+```
+git push origin master
 ```
 
 ## Update Units
