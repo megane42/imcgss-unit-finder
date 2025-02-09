@@ -15,7 +15,7 @@ type alias Live =
 
 all : List Live
 all =
-    [ { name = "Let’s AMUSEMENT!!! (デレステ10th) 大阪"
+    [ { name = "Let’s AMUSEMENT!!! 大阪"
       , date = Date.fromCalendarDate 2025 Mar 8
       , performers =
             Set.fromList
@@ -42,7 +42,7 @@ all =
                 , "イヴ・サンタクロース"
                 ]
       }
-    , { name = "Let’s AMUSEMENT!!! (デレステ10th) 東京 1日目"
+    , { name = "Let’s AMUSEMENT!!! 東京 1日目"
       , date = Date.fromCalendarDate 2025 Apr 26
       , performers =
             Set.fromList
@@ -70,7 +70,7 @@ all =
                 , "星輝子"
                 ]
       }
-    , { name = "Let’s AMUSEMENT!!! (デレステ10th) 東京 2日目"
+    , { name = "Let’s AMUSEMENT!!! 東京 2日目"
       , date = Date.fromCalendarDate 2025 Apr 27
       , performers =
             Set.fromList

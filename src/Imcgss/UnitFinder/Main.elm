@@ -76,33 +76,44 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ Html.form
+        [ Html.div
+            [ class "live-list-container" ]
+            (Imcgss.UnitFinder.Live.all
+                |> List.map (\live -> Html.button [ onClick (ChooseLive live) ] [ text live.name ])
+            )
+        , Html.form
             [ onSubmit Submit ]
-            [ textarea [ onInput Input, value model.input ] []
-            , button
-                [ disabled (String.isEmpty (String.trim model.input)) ]
-                [ text "Submit" ]
+            [ div [ class "input-performers-container" ]
+                [ textarea
+                    [ onInput Input, value model.input ]
+                    []
+                ]
+            , div [ class "submit-performers-container" ]
+                [ button
+                    [ disabled (String.isEmpty (String.trim model.input)) ]
+                    [ text "検索" ]
+                ]
             ]
-        , Html.div
-            []
-                (Imcgss.UnitFinder.Live.all
-                |> List.map (\live -> Html.button [onClick (ChooseLive live)] [ text live.name ]))
         , Html.ul
             []
             (model.foundUnits
-                |> List.map (\foundUnit -> Html.li [] [ foundUnitView foundUnit ])
+                |> List.map (\foundUnit -> Html.li [ class "found-unit-container" ] (foundUnitView foundUnit))
             )
         ]
 
 
-foundUnitView : Imcgss.UnitFinder.Finder.FoundUnit -> Html Msg
+foundUnitView : Imcgss.UnitFinder.Finder.FoundUnit -> List (Html Msg)
 foundUnitView foundUnit =
-    text
-        (foundUnit.unit.name
-            ++ " ("
-            ++ coverageView foundUnit.coverage
-            ++ ")"
-        )
+    [ h3 [] [ text foundUnit.unit.name ]
+    , div [class "found-unit-detail-container"]
+        [ ul [class "found-unit-members-container"]
+            (foundUnit.unit.members
+                |> Set.toList
+                |> List.map (\member -> li [] [ text member ])
+            )
+        , div [] [ text (coverageView foundUnit.coverage) ]
+        ]
+    ]
 
 
 coverageView : Float -> String
