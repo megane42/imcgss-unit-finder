@@ -1,14 +1,11 @@
 module Imcgss.UnitFinder.Preset exposing (Preset, all)
 
-import Date exposing (Date)
 import Imcgss.UnitFinder.Idol exposing (Idol)
 import Set exposing (Set)
-import Time exposing (Month(..))
 
 
 type alias Preset =
     { name : String
-    , date : Date
     , performers : Set Idol
     }
 
@@ -16,7 +13,6 @@ type alias Preset =
 all : List Preset
 all =
     [ { name = "Let’s AMUSEMENT!!! 大阪"
-      , date = Date.fromCalendarDate 2025 Mar 8
       , performers =
             Set.fromList
                 [ "島村卯月"
@@ -43,7 +39,6 @@ all =
                 ]
       }
     , { name = "Let’s AMUSEMENT!!! 東京 1日目"
-      , date = Date.fromCalendarDate 2025 Apr 26
       , performers =
             Set.fromList
                 [ "関裕美"
@@ -71,7 +66,6 @@ all =
                 ]
       }
     , { name = "Let’s AMUSEMENT!!! 東京 2日目"
-      , date = Date.fromCalendarDate 2025 Apr 27
       , performers =
             Set.fromList
                 [ "関裕美"
@@ -99,7 +93,6 @@ all =
                 ]
       }
     , { name = "Let’s AMUSEMENT!!! 沖縄"
-      , date = Date.fromCalendarDate 2025 Jun 7
       , performers =
             Set.fromList
                 [ "西園寺琴歌"
@@ -124,7 +117,6 @@ all =
                 ]
       }
     , { name = "Let’s AMUSEMENT!!! 福岡"
-      , date = Date.fromCalendarDate 2025 Jun 28
       , performers =
             Set.fromList
                 [ "黒埼ちとせ"
