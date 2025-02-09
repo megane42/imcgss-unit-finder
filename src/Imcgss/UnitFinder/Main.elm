@@ -78,10 +78,14 @@ view model =
     div []
         [ Html.h1 [ class "page-title" ] [ text "デレステ ユニット検索ツール" ]
         , Html.div
-            [ class "preset-list-container" ]
-            (Imcgss.UnitFinder.Preset.all
-                |> List.map (\preset -> Html.button [ onClick (ChoosePreset preset) ] [ text preset.name ])
-            )
+            [ class "preset-container" ]
+            [ h2 [] [ text "プリセット" ]
+            , div
+                [ class "preset-buttons-container" ]
+                (Imcgss.UnitFinder.Preset.all
+                    |> List.map (\preset -> Html.button [ onClick (ChoosePreset preset) ] [ text preset.name ])
+                )
+            ]
         , Html.form
             [ onSubmit Submit ]
             [ div [ class "input-performers-container" ]
