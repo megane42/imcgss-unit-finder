@@ -21,7 +21,13 @@ h3 {
     font-style: normal;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
 .page-title {
+    width: 85%;
     font-family: "Zen Kaku Gothic New", serif;
     font-weight: 300;
     font-style: normal;

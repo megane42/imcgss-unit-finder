@@ -76,7 +76,9 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ Html.h1 [ class "page-title" ] [ text "デレステ ユニット検索ツール" ]
+        [ Html.header
+            []
+            [ Html.h1 [ class "page-title" ] [ text "シンデレラガールズのライブ出演者で構成可能なユニットを検索するツール" ] ]
         , Html.div
             [ class "preset-container" ]
             [ h2 [] [ text "プリセット" ]
@@ -116,13 +118,14 @@ foundUnitView foundUnit =
         [ ul [ class "found-unit-members-container" ]
             (foundUnit.unit.members
                 |> Set.toList
-                |> List.map (\member ->
-                                 if Set.member member foundUnit.attendee  then
-                                     li [ class "attendee" ] [ text member ]
-                                 else
-                                     li [] [ text member ]
+                |> List.map
+                    (\member ->
+                        if Set.member member foundUnit.attendee then
+                            li [ class "attendee" ] [ text member ]
 
-                            )
+                        else
+                            li [] [ text member ]
+                    )
             )
         , div [] [ text (coverageView foundUnit.coverage) ]
         ]
