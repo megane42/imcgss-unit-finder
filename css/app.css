@@ -152,3 +152,16 @@ header {
     color: #fd99cb;
     font-weight: 500;
 }
+
+footer {
+    margin: 4em;
+}
+
+.github-link {
+    display: flex;
+    justify-content: center;
+}
+
+.github-link a img {
+    width: 48px;
+}

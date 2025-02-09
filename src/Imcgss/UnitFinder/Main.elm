@@ -108,6 +108,13 @@ view model =
             (model.foundUnits
                 |> List.map (\foundUnit -> Html.li [ class "found-unit-container" ] (foundUnitView foundUnit))
             )
+        , Html.footer
+            []
+            [ div [ class "github-link" ]
+                [ a [ href "https://github.com/megane42/imcgss-unit-finder", target "__blank" ]
+                    [ img [ src "[VITE_PLUGIN_ELM_ASSET:/assets/github-mark.svg]", alt "link to github" ] [] ]
+                ]
+            ]
         ]
 
 
