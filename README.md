@@ -1,4 +1,4 @@
-# シンデレラガールズのライブ出演者で構成可能なユニットを検索するツール
+# シンデレラガールズのライブ出演者からオリジナルメンバーの揃い具合を調べるツール
 
 ## Prerequisites
 
@@ -24,9 +24,9 @@ npm run build
 git push origin master
 ```
 
-## Update Units
+## Update Songs
 
-- Open [src/Imcgss/UnitFinder/Unit.elm](https://github.com/megane42/imcgss-unit-finder/blob/master/src/Imcgss/UnitFinder/Unit.elm)
+- Open [src/Imcgss/UnitFinder/Songs.elm](https://github.com/megane42/imcgss-unit-finder/blob/master/src/Imcgss/UnitFinder/Song.elm)
 - Do something
 
 ## Update Presets
@@ -36,4 +36,4 @@ git push origin master
 
 ## Special Thanks
 
-- [ユニット一覧 - デレステ攻略Wiki | Gamerch](https://gamerch.com/imascg-slstage-wiki/519255)
+- [楽曲一覧 - デレステ攻略Wiki | Gamerch](https://gamerch.com/imascg-slstage-wiki/515998)

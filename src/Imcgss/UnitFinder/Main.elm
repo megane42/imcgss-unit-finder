@@ -25,14 +25,14 @@ main =
 
 type alias Model =
     { input : String
-    , foundUnits : List Imcgss.UnitFinder.Finder.FoundUnit
+    , foundSongs : List Imcgss.UnitFinder.Finder.FoundSong
     }
 
 
 init : Model
 init =
     { input = ""
-    , foundUnits = []
+    , foundSongs = []
     }
 
 
@@ -60,7 +60,7 @@ update msg model =
                         |> String.split "\n"
                         |> Set.fromList
             in
-            { model | foundUnits = Imcgss.UnitFinder.Finder.find performers }
+            { model | foundSongs = Imcgss.UnitFinder.Finder.find performers }
 
         ChoosePreset preset ->
             { model
@@ -78,7 +78,7 @@ view model =
     div []
         [ Html.header
             []
-            [ Html.h1 [ class "page-title" ] [ text "シンデレラガールズのライブ出演者で構成可能なユニットを検索するツール" ] ]
+            [ Html.h1 [ class "page-title" ] [ text "シンデレラガールズのライブ出演者からオリジナルメンバーの揃い具合を調べるツール" ] ]
         , Html.div
             [ class "preset-container" ]
             [ h2 [] [ text "プリセット" ]
@@ -105,8 +105,8 @@ view model =
             ]
         , Html.ul
             []
-            (model.foundUnits
-                |> List.map (\foundUnit -> Html.li [ class "found-unit-container" ] (foundUnitView foundUnit))
+            (model.foundSongs
+                |> List.map (\foundSong -> Html.li [ class "found-song-container" ] (foundSongView foundSong))
             )
         , Html.footer
             []
@@ -118,23 +118,23 @@ view model =
         ]
 
 
-foundUnitView : Imcgss.UnitFinder.Finder.FoundUnit -> List (Html Msg)
-foundUnitView foundUnit =
-    [ h3 [] [ text foundUnit.unit.name ]
-    , div [ class "found-unit-detail-container" ]
-        [ ul [ class "found-unit-members-container" ]
-            (foundUnit.unit.members
+foundSongView : Imcgss.UnitFinder.Finder.FoundSong -> List (Html Msg)
+foundSongView foundSong =
+    [ h3 [] [ text foundSong.song.name ]
+    , div [ class "found-song-detail-container" ]
+        [ ul [ class "found-song-members-container" ]
+            (foundSong.song.members
                 |> Set.toList
                 |> List.map
                     (\member ->
-                        if Set.member member foundUnit.attendee then
+                        if Set.member member foundSong.attendee then
                             li [ class "attendee" ] [ text member ]
 
                         else
                             li [] [ text member ]
                     )
             )
-        , div [] [ text (coverageView foundUnit.coverage) ]
+        , div [] [ text (coverageView foundSong.coverage) ]
         ]
     ]
 

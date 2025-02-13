@@ -1,40 +1,40 @@
-module Imcgss.UnitFinder.Finder exposing (FoundUnit, find)
+module Imcgss.UnitFinder.Finder exposing (FoundSong, find)
 
 import Imcgss.UnitFinder.Idol exposing (Idol)
-import Imcgss.UnitFinder.Unit exposing (Unit, all)
+import Imcgss.UnitFinder.Song exposing (Song, all)
 import Set exposing (Set)
 
 
-type alias FoundUnit =
-    { unit : Unit
+type alias FoundSong =
+    { song : Song
     , attendee : Set Idol
     , coverage : Float
     }
 
 
-find : Set Idol -> List FoundUnit
+find : Set Idol -> List FoundSong
 find performers =
-    Imcgss.UnitFinder.Unit.all
+    Imcgss.UnitFinder.Song.all
         |> List.map
-            (\currentUnit ->
+            (\currentSong ->
                 let
                     attendee =
-                        Set.intersect performers currentUnit.members
+                        Set.intersect performers currentSong.members
                 in
-                { unit = currentUnit
+                { song = currentSong
                 , attendee = attendee
-                , coverage = toFloat (Set.size attendee) / toFloat (Set.size currentUnit.members)
+                , coverage = toFloat (Set.size attendee) / toFloat (Set.size currentSong.members)
                 }
             )
-        |> List.filter (\currentFoundUnit -> currentFoundUnit.coverage > 0)
-        |> List.sortWith foundUnitComparison
+        |> List.filter (\currentFoundSong -> currentFoundSong.coverage > 0)
+        |> List.sortWith foundSongComparison
         |> List.reverse
 
 
-foundUnitComparison : FoundUnit -> FoundUnit -> Order
-foundUnitComparison foundUnit1 foundUnit2 =
-    if foundUnit1.coverage == foundUnit2.coverage then
-        compare (Set.size foundUnit1.unit.members) (Set.size foundUnit2.unit.members)
+foundSongComparison : FoundSong -> FoundSong -> Order
+foundSongComparison foundSong1 foundSong2 =
+    if foundSong1.coverage == foundSong2.coverage then
+        compare (Set.size foundSong1.song.members) (Set.size foundSong2.song.members)
 
     else
-        compare foundUnit1.coverage foundUnit2.coverage
+        compare foundSong1.coverage foundSong2.coverage
