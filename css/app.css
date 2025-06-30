@@ -120,6 +120,21 @@ header {
     opacity: 0.6;
 }
 
+.preset-buttons-container .starlight-stage-preset {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, #fec001, #fd99cb, #6699ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.preset-buttons-container.starlight-stage-preset:hover {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, #fec001, #fd99cb, #6699ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
 .found-song-container {
     margin: 1em;
     list-style-type: none;

@@ -85,7 +85,21 @@ view model =
             , div
                 [ class "preset-buttons-container" ]
                 (Imcgss.UnitFinder.Preset.all
-                    |> List.map (\preset -> Html.button [ onClick (ChoosePreset preset) ] [ text preset.name ])
+                    |> List.map 
+                        (\preset -> 
+                            let
+                                buttonClass =
+                                    if String.contains "STARLIGHT STAGE" preset.name then
+                                        "starlight-stage-preset"
+                                    else
+                                        ""
+                            in
+                            Html.button 
+                                [ onClick (ChoosePreset preset)
+                                , class buttonClass
+                                ] 
+                                [ text preset.name ]
+                        )
                 )
             ]
         , Html.form
