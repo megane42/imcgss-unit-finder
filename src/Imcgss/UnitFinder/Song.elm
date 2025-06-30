@@ -195,6 +195,9 @@ all =
     , { name = "Starry Night"
       , members = Set.fromList [ "三船美優", "松永涼", "砂塚あきら", "藤原肇", "森久保乃々" ]
       }
+    , { name = "熱情エナモラル"
+      , members = Set.fromList [ "佐藤心", "村上巴", "夢見りあむ", "依田芳乃", "久川凪" ]
+      }
     , { name = "認めてくれなくたっていいよ"
       , members = Set.fromList [ "松永涼", "黒埼ちとせ", "三船美優", "早坂美玲", "藤原肇" ]
       }
