@@ -124,9 +124,15 @@ view model =
             )
         , Html.footer
             []
-            [ div [ class "github-link" ]
-                [ a [ href "https://github.com/megane42/imcgss-unit-finder", target "__blank" ]
-                    [ img [ src "[VITE_PLUGIN_ELM_ASSET:/assets/github-mark.svg]", alt "link to github" ] [] ]
+            [ div [ class "social-links" ]
+                [ div [ class "github-link" ]
+                    [ a [ href "https://github.com/megane42/imcgss-unit-finder", target "__blank" ]
+                        [ img [ src "[VITE_PLUGIN_ELM_ASSET:/assets/github-mark.svg]", alt "link to github" ] [] ]
+                    ]
+                , div [ class "x-link" ]
+                    [ a [ href "https://x.com/megane42", target "__blank" ]
+                        [ img [ src "[VITE_PLUGIN_ELM_ASSET:/assets/x-mark.svg]", alt "link to X" ] [] ]
+                    ]
                 ]
             ]
         ]

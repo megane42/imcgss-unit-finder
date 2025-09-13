@@ -172,11 +172,27 @@ footer {
     margin: 4em;
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
 .github-link {
     display: flex;
     justify-content: center;
 }
 
 .github-link a img {
-    width: 48px;
+    width: 36px;
+}
+
+.x-link {
+    display: flex;
+    justify-content: center;
+}
+
+.x-link a img {
+    width: 36px;
+    filter: brightness(0);
 }
