@@ -810,4 +810,37 @@ all =
     , { name = "ゼロトゥワン!!"
       , members = Set.fromList [ "赤城みりあ", "橘ありす", "結城晴", "佐々木千枝", "古賀小春", "市原仁奈", "龍崎薫", "的場梨沙", "櫻井桃華" ]
       }
+    , { name = "恒久のユニバース"
+      , members = Set.fromList [ "橘ありす", "鷺沢文香" ]
+      }
+    , { name = "もしも「カワイイ」が世界からなくなっても"
+      , members = Set.fromList [ "佐藤心", "輿水幸子" ]
+      }
+    , { name = "恒久のユニバース"
+      , members = Set.fromList [ "橘ありす", "鷺沢文香" ]
+      }
+    , { name = "Neon Sphere"
+      , members = Set.fromList [ "速水奏", "塩見周子", "城ヶ崎美嘉", "一ノ瀬志希", "宮本フレデリカ" ]
+      }
+    , { name = "クロス×オーバー！"
+      , members = Set.fromList [ "島村卯月", "渋谷凛", "本田未央", "辻野あかり", "砂塚あきら", "夢見りあむ" ]
+      }
+    , { name = "シンデレラNo.1"
+      , members = Set.fromList [ "安部菜々", "神崎蘭子", "松永あかね" ]
+      }
+    , { name = "ROSE ～禁じられた愛～"
+      , members = Set.fromList [ "桐生つかさ", "木村夏樹", "白雪千夜" ]
+      }
+    , { name = "Poppin' para Pong!"
+      , members = Set.fromList [ "赤城みりあ", "市原仁奈", "椎名法子" ]
+      }
+    , { name = "Cookie Dough"
+      , members = Set.fromList [ "高垣楓", "三船美優", "大和亜季" ]
+      }
+    , { name = "大好きのブーケ"
+      , members = Set.fromList [ "佐久間まゆ", "五十嵐響子", "相葉夕美" ]
+      }
+    , { name = "すりーぷすきっぷ"
+      , members = Set.fromList [ "双葉杏", "久川凪", "白菊ほたる" ]
+      }
     ]
